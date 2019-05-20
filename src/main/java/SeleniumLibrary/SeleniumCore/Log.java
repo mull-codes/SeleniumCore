@@ -1,17 +1,16 @@
 package SeleniumLibrary.SeleniumCore;
 
-import org.junit.Assert;
-
 public class Log {
 	
-	public void LogScriptInfo(String info) {
+	public static void LogScriptInfo(String info) {
 		println("*********************************************************************");
 		println(info);
 		println("*********************************************************************");
 	}
 	
-	public boolean altVerity(String expected, String actual) {
+	public static boolean altVerify(String expected, String actual) {
 		if(expected.equals(actual)) {
+			println("Expected\t-\t" + expected + "\tand\t-\tActual\t" + actual + "\t-\t both true");
 			return true;
 		}else {
 			println("Expected\t-\t" + expected + "\tdid not match\t-\tActual\t" + actual);
@@ -19,8 +18,9 @@ public class Log {
 		}
 	}
 	
-	public boolean altVerify(int expected, int actual) {
+	public static boolean altVerify(int expected, int actual) {
 		if(expected == actual) {
+			println("Expected\t-\t" + expected + "\tand\t-\tActual\t" + actual + "\t-\t both true");
 			return true;
 		}else {
 			println("Expected\t-\t" + expected + "\tdid not match\t-\tActual\t" + actual);
@@ -28,8 +28,9 @@ public class Log {
 		}
 	}
 	
-	public boolean altVerify(long expected, long actual) {
+	public static boolean altVerify(long expected, long actual) {
 		if(expected == actual) {
+			println("Expected\t-\t" + expected + "\tand\t-\tActual\t" + actual + "\t-\t both true");
 			return true;
 		}else {
 			println("Expected\t-\t" + expected + "\tdid not match\t-\tActual\t" + actual);
@@ -37,16 +38,16 @@ public class Log {
 		}
 	}
 	
-	private void errorMessage(String message) {
+	private static void errorMessage(String message) {
 		println("ERROR\t-\t" + message);
 	}
 	
 	
-	public void print(String s) {
+	public static void print(String s) {
 		System.out.print(s);
 	}
 	
-	public void println(String s) {
+	public static void println(String s) {
 		System.out.print(s);
 	}
 }

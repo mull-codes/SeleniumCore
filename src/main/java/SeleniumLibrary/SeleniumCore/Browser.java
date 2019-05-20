@@ -1,21 +1,27 @@
 package SeleniumLibrary.SeleniumCore;
 
-//import Core Library
-import SeleniumLibrary.SeleniumCore.Core;
+import org.openqa.selenium.WebDriver;
 
 public class Browser {
 	
-	public void start() {
+	//Static driver
+	public static WebDriver driverStatic;
+	
+	public static void start() {
 		
 	}
 	
-	public boolean textExists(String text) {
+	public static boolean textExists(String text) {
 		return false;
 	}
 	
-	public void close() {
-		Core.driver.close();
-		Core.driver.quit();
+	public static String getTitle() {
+		return Core.driver.getTitle();
+	}
+	
+	public static void close() {
+		driverStatic.close();
+		driverStatic.quit();
 	}
 	
 }
