@@ -1,4 +1,5 @@
 package SeleniumLibrary.SeleniumCore;
+import static org.junit.Assert.*;
 
 public class Log {
 	
@@ -9,33 +10,54 @@ public class Log {
 	}
 	
 	public static boolean altVerify(String expected, String actual) {
-		if(expected.equals(actual)) {
-			println("Expected\t-\t" + expected + "\tand\t-\tActual\t" + actual + "\t-\t both true");
-			return true;
-		}else {
-			println("Expected\t-\t" + expected + "\tdid not match\t-\tActual\t" + actual);
-			return false;
+		/*boolean result = false;
+		try {
+			if(expected.equals(actual)) {
+				println("Expected\t-\t" + expected + "\tand\t-\tActual\t" + actual + "\t-\t both true");
+				result =  true;
+			}else{
+				println("Expected\t-\t" + expected + "\tdid not match\t-\tActual\t" + actual);
+				result = false;
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
 		}
+		return result;
+		*/
+		assertEquals(expected, actual);
+		return true;
 	}
 	
 	public static boolean altVerify(int expected, int actual) {
-		if(expected == actual) {
-			println("Expected\t-\t" + expected + "\tand\t-\tActual\t" + actual + "\t-\t both true");
-			return true;
-		}else {
-			println("Expected\t-\t" + expected + "\tdid not match\t-\tActual\t" + actual);
-			return false;
+		boolean isTrue = false;
+		try {
+			if(expected == actual) {
+				println("Expected\t-\t" + expected + "\tand\t-\tActual\t" + actual + "\t-\t both true");
+				isTrue = true;
+			}else{
+				println("Expected\t-\t" + expected + "\tdid not match\t-\tActual\t" + actual);
+				isTrue = false;
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
 		}
+		return isTrue;
 	}
 	
 	public static boolean altVerify(long expected, long actual) {
-		if(expected == actual) {
-			println("Expected\t-\t" + expected + "\tand\t-\tActual\t" + actual + "\t-\t both true");
-			return true;
-		}else {
-			println("Expected\t-\t" + expected + "\tdid not match\t-\tActual\t" + actual);
-			return false;
+		boolean isTrue = false;
+		try {
+			if(expected == actual) {
+				println("Expected\t-\t" + expected + "\tand\t-\tActual\t" + actual + "\t-\t both true");
+				isTrue = true;
+			}else{
+				println("Expected\t-\t" + expected + "\tdid not match\t-\tActual\t" + actual);
+				isTrue = false;
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
 		}
+		return isTrue;
 	}
 	
 	private static void errorMessage(String message) {
@@ -48,6 +70,6 @@ public class Log {
 	}
 	
 	public static void println(String s) {
-		System.out.print(s);
+		System.out.println(s);
 	}
 }

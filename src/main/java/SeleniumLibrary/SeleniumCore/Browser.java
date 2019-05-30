@@ -12,16 +12,32 @@ public class Browser {
 	}
 	
 	public static boolean textExists(String text) {
-		return false;
+		boolean txtFound = false;
+		try {
+			txtFound = driverStatic.getPageSource().contains(text);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return txtFound;
 	}
 	
 	public static String getTitle() {
-		return Core.driver.getTitle();
+		String title = "";
+		try {
+			title = driverStatic.getTitle();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return title;
 	}
 	
 	public static void close() {
-		driverStatic.close();
-		driverStatic.quit();
+		try {
+			driverStatic.close();
+			driverStatic.quit();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 }
